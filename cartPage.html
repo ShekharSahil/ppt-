@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>CartPage</title>
+     <script
+     src="https://kit.fontawesome.com/d1d18244ac.js"
+     crossorigin="anonymous"
+   ></script>
+  
+     <style>
+     #navbar{
+     width: 100%;
+     padding-top: 10px;
+     display: flex;
+     justify-content: space-between;
+     box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+     height: 50px;
+     top: 0px;
+     margin-top: -15px;
+     margin-bottom: 9px;
+     background-color: #ffffff;
+     height: 80px;
+     color: #4f585e;
+     position: sticky;
+}
+
+.right{
+     width: 25%;
+     display: flex;
+     justify-content: space-evenly;
+     margin-right: 100px;
+    
+    
+}
+
+.right>div{
+     text-align: start;
+     margin: auto;
+     font-family: Inter, sans-serif;
+     font-size: 16px;
+     line-height:24px;
+     color: #30363c;
+     height: auto;
+     
+     
+}
+.right div:hover{
+     cursor: pointer;
+     text-decoration-style: dashed;
+}
+.left{
+     display: flex;
+     justify-content: space-between;
+     width: 22%;
+     height: 50px;
+     margin-left:90px;
+     margin-top: 0px;
+     padding-left: 10px;
+     
+}
+.left>img{
+     margin-top: 15px;
+     width: 45%;
+     height: 90%;
+}
+
+.left>div{
+     padding-top: -100px;
+     width: 160px;
+     text-align: end;
+     margin-bottom: 10px;
+     border-left: 1px solid;
+     margin-left: -30px;
+}
+.left>div:hover{
+     cursor: pointer;
+}
+
+p{
+margin:0px
+}
+
+#menuBar{
+     display: flex;
+     position: fixed;
+     height: 35px;
+     padding-left: 25%;
+     font-family: Inter, sans-serif;
+     background-color: #eef4ff;
+     color: #4f585e;
+     width: 100%;
+     font-size: 14px;
+     margin-top: -7px;     
+}
+#menuBar div{
+
+text-align: center;
+padding-top: 8px;
+margin-right: 20px;
+width: 95px;
+}
+#menuBar> div>p:hover{
+     cursor: pointer;
+     text-decoration: underline;
+}
+h1{
+     margin-top: 80px;
+     margin-left: 14%;
+     color: #4f585e;
+}
+
+#cartContainer{
+     width: 73%;
+     margin: auto;
+     display: grid;
+     grid-template-columns: repeat(4,1fr);
+     gap: 8px;
+     font-family: Inter, sans-serif;
+     color: #4f585e;
+
+}
+#cartContainer>div{
+     padding: 20px;
+     border-radius: 8px;
+     border:1px solid #e0e1e2;
+}
+#cartContainer img{
+     margin-left: 65px;
+     width: 100px;
+     height: 200px;
+}
+#cartContainer button{
+     width: 100px;
+     height: 40px;
+     border:1px solid #e0e1e2;
+     border-radius: 8px;
+     font-weight: bolder;
+}
+#cartContainer div:hover{
+     cursor: pointer;
+     border:1px solid #10847e;
+}
+#cartContainer button:hover{
+     cursor: pointer;
+background-color: #10847e;
+color: white;
+
+}
+#checkout{
+     width: 200px;
+     font-size: 20px;
+     height: 50px;
+     border-radius: 8px;
+     border:1px solid #d9dbdc;
+     font-weight: bold;
+}
+#cartDetails{
+     margin-top: -80px;
+     font-family: Inter, sans-serif;
+     color: #4f585e;
+     height: 200px;
+     width: 20%;
+     border-radius: 12px;
+     color: hsl(0, 100%, 1%);
+     background: rgb(165,238,235);
+     background: linear-gradient(297deg, rgba(165,238,235,1) 6%, rgba(227,246,244,1) 58%);
+     padding-top: 50px;
+     margin-left: 70%;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+#checkout:hover{
+     cursor: pointer;
+    border:1px solid #10847e;
+     color: #10847e;
+}
+   /*Footer CSS*/
+
+   #footer {
+     width: 90%;
+     margin: auto;
+     background-color: #eef4ff;
+     padding: 50px;
+     font-family: Inter, sans-serif;
+     color: #4f585e;
+     margin-top: 100px;
+     line-height: 35px;
+   }
+
+  .up{
+  display: flex;
+  justify-content: space-between;
+  }
+
+  .social{
+       width: 15%;
+  }
+
+  .social>div>img{
+       width: 15%;
+       margin-right: 5px;
+  }
+
+  .down>div:nth-child(2){
+       width: 60%;
+       display: grid;
+       grid-template-columns: repeat(10,1fr);
+       gap: 20px;
+       
+  }
+
+  .down>div>img{
+       width:35px;
+       height: 20px;
+  }
+
+
+     </style>
+</head>
+<body>
+     <div id="navbar">
+          <div class="left">
+            <img
+              src="https://assets.pharmeasy.in/apothecary/images/logo_big.svg?dim=360x0"
+              alt="logo"
+            />
+          </div>
+          <div class="right">
+            <div id="medlogin"><i class="fa-solid fa-user"></i> Hello, Log in</div>
+            <div id="medoff"><i class="fa-solid fa-gift"></i> Offers</div>
+            <div id="medcart"><i class="fa-solid fa-cart-shopping"></i> cart</div>
+          </div>
+        </div>
+    
+        <div id="menuBar">
+          <div id="med"><p>Medicine</p></div>
+          <div id="Hc"><p>Healthcare</p></div>
+          <div id="Lt"><p>Lab Tests</p></div>
+          <div id="Of"><p>Offers</p></div>
+          <div id="Pls"><p>PLUS</p></div>
+          <div id="Hb"><p>Health Blogs</p></div>
+        </div>
+        <h1>Cart</h1>
+         <div id="cartDetails"><h3 >Total cart Item :&nbsp<span id="total-item"></span></h3>
+          <h3 >Total cost :&nbsp <span id="total-cost"></span></h3>
+          <button id="checkout">Move to Checkout</button>
+     </div> 
+        
+        <div id="cartContainer"></div>
+        
+        <!--Footer section-->
+
+        <div id="footer">
+          <div class="up">
+            <div>
+              <h3>Company</h3>
+              <p>About Us</p>
+              <p>About Us</p>
+              <p>Blog</p>
+              <p>Partner with PharmEasy</p>
+              <p>Sell at PharmEasy</p>
+              <h3>Our Services</h3>
+              <p>Order Medicine</p>
+              <p>Healthcare Products</p>
+              <p>Lab Tests</p>
+            </div>
+            <div>
+              <h3>Featured Categories</h3>
+              <p>Covid Essentials</p>
+              <p>Personal Care</p>
+              <p>Health Food and Drinks</p>
+              <p>Beauty</p>
+              <p>Skin Care</p>
+              <p>Home Care</p>
+              <p>Ayurvedic Care</p>
+              <p>Sexual Wellness</p>
+              <p>Fitness Supplements</p>
+              <p>Mother and Baby Care</p>
+              <p>Healthcare Devices</p>
+              <p>Health Condition</p>
+              <p>Diabetic Care</p>
+              <p>Elderly Care</p>
+              <p>Accessories And Wearables</p>
+              <p>Top Products</p>
+            </div>
+            <div>
+              <h3>Need Help</h3>
+              <p>Browse All Medicines</p>
+              <p>Browse All Molecules</p>
+              <p>Browse All Cities</p>
+              <p>Browse All Areas</p>
+              <p>Browse All Stores</p>
+              <p>FAQs</p>
+              <h3>Policy Info</h3>
+              <p>Editorial Policy</p>
+              <p>Privacy Policy</p>
+              <p>Vulnerability Disclosure Policy</p>
+              <p>Terms and Conditions</p>
+              <p>Customer Support Policy</p>
+              <p>Return Policy</p>
+            </div>
+            <div class="social">
+              <h3>Follow us on</h3>
+              <div >
+                   <img src="https://assets.pharmeasy.in/apothecary/images/Instagram.svg?dim=32x0"></img>
+                   <img src="https://assets.pharmeasy.in/apothecary/images/facebook.svg?dim=32x0"></img>
+                   <img src="https://assets.pharmeasy.in/apothecary/images/Youtube.svg?dim=32x0"></img>
+                   <img src="https://assets.pharmeasy.in/apothecary/images/Twitter.svg?dim=32x0"></img>
+    
+              </div>
+              </div>
+          </div>
+          <div class="down">
+              <div><h3>Our Payment Partners</h3></div>
+              <div>
+                   <img src="https://assets.pharmeasy.in/apothecary/images/gpay.png?dim=1440x0" alt="">
+                   <img src="https://assets.pharmeasy.in/apothecary/images/paytm.png?dim=1440x0" alt="">
+                   <img src="https://assets.pharmeasy.in/apothecary/images/phonepe.png?dim=1440x0" alt="">
+                   <img src="https://assets.pharmeasy.in/apothecary/images/amazon.png?dim=1440x0" alt="">
+                   <img src="https://assets.pharmeasy.in/apothecary/images/mobikwik.png?dim=1440x0" alt="">
+                   <img src="https://assets.pharmeasy.in/apothecary/images/olamoney.png?dim=1440x0" alt="">
+                   <img src="https://assets.pharmeasy.in/apothecary/images/maestro.png?dim=1440x0" alt="">
+                   <img src="https://assets.pharmeasy.in/apothecary/images/mastercard.png?dim=1440x0" alt="">
+                   <img src="https://assets.pharmeasy.in/apothecary/images/visa.png?dim=1440x0" alt="">
+                   <img src="https://assets.pharmeasy.in/apothecary/images/rupay.png?dim=1440x0" alt="">
+              </div>
+         </div>
+         
+        </div>
+        
+</body>
+</html>
+<script>
+     let cartItem = JSON.parse(localStorage.getItem("myCart")) || [];
+
+     document.querySelector("#total-item").innerText = cartItem.length;
+     let total = cartItem.reduce(function(acc,ele,i){
+          return acc +Number(ele.mrp)
+     },0)
+     document.querySelector("#total-cost").innerText = total ;
+
+     cartItem.map(function(elem,i){
+          let box =document.createElement("div");
+
+          let  productimg = document.createElement("img");
+          productimg.setAttribute("src",elem.url_img);
+
+          let productName = document.createElement("h4");
+          productName.innerText = elem.Name;
+
+          let productPrice = document.createElement("h5");
+          productPrice.innerText = "Rs. "+elem.mrp;
+
+          let Removebtn  = document.createElement("button");
+          Removebtn.innerText = "Remove Item";
+          
+          Removebtn.addEventListener("click",function(){
+               event.target.parentNode.remove()
+               cartItem.splice(i,1)
+               localStorage.setItem("myCart",JSON.stringify(cartItem))
+         
+
+                document.querySelector("#total-item").innerText = cartItem.length
+
+                 let totalp = cartItem.reduce(function(acc,ele,i){
+                    return acc + Number(ele.mrp)
+                 },0)
+                 document.querySelector("#total-cost").innerText = totalp.toFixed(2)
+
+               });
+
+          box.append(productimg,productName,productPrice,Removebtn);
+          document.querySelector("#cartContainer").append(box);
+     });
+
+          document.querySelector("#medlogin").addEventListener("click", function () {
+          window.location.href = "login.html";
+          });
+
+          document.querySelector(".left>img").addEventListener("click", function () {
+          window.location.href = "index.html";
+          });
+           document.querySelector("#med").addEventListener("click", function () {
+          window.location.href = "medicine.html";
+          });
+          document.querySelector("#Hc").addEventListener("click", function () {
+          window.location.href = "healthCare.html";
+          });
+          document.querySelector("#Lt").addEventListener("click", function () {
+          window.location.href = "medicine.html";
+          });
+
+          document.querySelector("#Of").addEventListener("click", function () {
+          window.location.href = "medicine.html";
+          });
+          document.querySelector("#Pls").addEventListener("click", function () {
+          window.location.href = "medicine.html";
+          });
+          document.querySelector("#Hb").addEventListener("click", function () {
+          window.location.href = "healthCare.html";
+          });
+ 
+</script>
